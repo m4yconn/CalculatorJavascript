@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/calc_functions.js"></script>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="main">
+        <form action="" name="Calculator" class="calculator">
+                <input id="display" type="text" value="0" disabled>
+
+                <input type="button" class="btn color-num" value="1" onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="2" onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="3" onclick="attDisplay(this);">
+                <input type="button" class="btn color-sin" value="&divide;" onclick="attDisplay(this);">
+
+                <input type="button" class="btn color-num" value="4" onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="5" onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="6" onclick="attDisplay(this);">
+                <input type="button" class="btn color-sin" value="*" onclick="attDisplay(this);">
+
+                <input type="button" class="btn color-num" value="7" onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="8" onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="9" onclick="attDisplay(this);">
+                <input type="button" class="btn color-sin" value="+" onclick="attDisplay(this);">
+
+                <input type="button" class="btn color-num" value="." onclick="attDisplay(this);">
+                <input type="button" class="btn color-num" value="0" onclick="attDisplay(this);">
+                <input type="button" class="btn color-c" value="C" onclick="clsDisplay();">
+                <input type="button" class="btn color-sin" value="^" onclick="attDisplay(this);">
+
+                <input type="button" class="btn color-sin" value="( )" onclick="attDisplay(this);">
+                <input type="button" class="btn color-sin" value="-" onclick="attDisplay(this);">
+                <input type="button" class="btn color-sin" value="&radic;" onclick="attDisplay(this);">
+                <input type="button" class="btn color-sin" value="=" onclick="resulCalc();">
+
+        </form>
+    </div>
+</body>
+</html>
