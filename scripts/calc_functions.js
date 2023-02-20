@@ -1,10 +1,11 @@
 let calc = "";
 let openP = false;
+let isRad = false;
 
 function attDisplay(btn){
     const display = document.getElementById("display");
 
-    if(display.value == "0") display.value = "";
+    if(display.value == "0" || display.value == "ERROR") display.value = "";
     if(display.value.length >= 12) return;
 
     if(btn.value === "( )"){
@@ -30,10 +31,23 @@ function clsDisplay(){
 function resulCalc(){
     var display = document.getElementById("display");
 
-    let resul = eval(calc);
+    if(isRad){
+        calc += "**0.5"
+    }
 
-    display.value = resul;
-    calc = display.value;
+    isRad = false
+
+    try{
+        let resul = eval(calc);
+
+        display.value = resul;
+        calc = display.value;
+    }
+    catch(error){
+        display.value = "ERROR"
+        calc = ""
+    }
+    
 }
 
 function checkParanteses(){
@@ -55,20 +69,35 @@ function checkOperador(btn){
     var display = document.getElementById("display");
 
     if(btn.value == "÷"){
+        if(isRad){
+            calc += "**0.5"
+        }
         display.value += btn.value;
         calc += "/";
+        isRad = false
         return true;
     }
 
     if(btn.value == "√"){
         display.value += btn.value;
-        calc += "**0.5"
+        isRad = true;
         return true;
     }
 
     if(btn.value == "^"){
+        if(isRad){
+            calc += "**0.5"
+        }
         display.value += btn.value;
         calc += "**";
+        isRad = false
         return true;
+    }
+
+    if(isNaN(btn.value)){
+        if(isRad){
+            calc += "**0.5"
+        }
+        isRad = false;
     }
 }
