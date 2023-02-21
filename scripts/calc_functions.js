@@ -94,7 +94,7 @@ function checkOperador(btn){
         return true;
     }
 
-    if(isNaN(btn.value)){
+    if(isNaN(btn.value) && btn.value != "."){
         if(isRad){
             calc += "**0.5"
         }
